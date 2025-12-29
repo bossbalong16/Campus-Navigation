@@ -194,3 +194,23 @@ button:active {
     color: #065f46;
 }
 
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #2a335a;
+    text-align: center;
+    font-size: 13px;
+    color: #9aa3d1;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* Light mode support */
+.light .footer {
+    border-top: 1px solid #d1d5db;
+    color: #6b7280;
+}
+
