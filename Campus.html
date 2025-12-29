@@ -16,11 +16,44 @@
         <img src="dijkstra.png" class="floor-map" />
     </div>
 
-    <label>Start:</label>
+    <label>Close Route Announcement (optional)</label>
+    <select id="">
+        <option value="">Select Route</option>
+        <option value="">GATE ENTRANCE</option>  
+        <option value="">COURT</option>     
+        <option value="">PARKING</option>  
+        <option value="">GUARD</option>     
+        <option value="">CANTEEN</option>    
+        <option value="">VEHICLE EXIT WAY</option>    
+        <option value="">STUDENT EXIT WAY</option>    
+        <option value="">GATE EXIT</option>    
+        <option value="">CAMPUS ENTRANCE</option>
+        <option value="">OFFICE 1</option>   
+        <option value="">OFFICE 2</option>    
+        <option value="">OFFICE 3</option>    
+        <option value="">OFFICE 4</option>    
+        <option value="">OFFICE 5</option>      
+        <option value="">2nd STAIR LEFT</option>
+        <option value="">2nd STAIR RIGHT</option> 
+        <option value="">RM:201</option> 
+        <option value="">RM:202</option> 
+        <option value="">RM:203</option> 
+        <option value="">RM:204</option> 
+        <option value="">RM:205</option>        
+        <option value="">3rd STAIR LEFT</option>
+        <option value="">3rd STAIR RIGHT</option> 
+        <option value="">RM:301</option>
+        <option value="">RM:302</option>
+        <option value="">RM:303</option>
+        <option value="">RM:304</option> 
+    </select>
+    <br>
+
+    <label>📌 Start:</label>
     <select id="start"></select>
     <br>
-    <label>Floor Destination:</label>
-    <select id="floorSelect" onchange="showFloorMap()">
+    <label>📌 Floor Destination:</label>
+    <select id="floorSelect" onchange="showFloorMap()" >
         <option disabled selected>Select Floor</option>
         <option value="out">Outside Of Campus</option>
         <option value="1st">1st Floor</option>
@@ -29,7 +62,7 @@
     </select>
     <br>
 
-    <label>Destination:</label>
+    <label>📌 Destination:</label>
     <select id="end" disabled></select>
 
     <div class="buttons">
@@ -39,16 +72,13 @@
 
     <div id="output"></div>
     <footer class="footer">
-        <p>© Case 8 Data Structures and Algorithms</p>
+        <p>© Case 8 data structures and algorithms</p>
         <p>Author: J. Saguindan III, J. De Mesa, R. Madrona</p>
         <p>From: BSIT 2-1 </p>
     </footer>
-
 
     <script src="script.js"></script>
 
 </body>
 
-
 </html>
-
