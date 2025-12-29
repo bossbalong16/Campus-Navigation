@@ -1,64 +1,88 @@
-/* ===== Global ===== */
-* {
+/* ===== CSS RESET & GLOBAL ===== */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
 }
 
 body {
     font-family: "Inter", Arial, sans-serif;
-    padding: 24px;
+    min-height: 100vh;
+    padding: clamp(16px, 4vw, 32px);
     background: #0f1220;
     color: #e5e7f5;
-    transition: background .25s, color .25s;
+    transition: background .25s ease, color .25s ease;
+    line-height: 1.6;
 }
 
-/* ===== Container Card ===== */
+/* ===== MAIN CONTAINER ===== */
 .container {
+    max-width: 900px;
+    margin: 0 auto;
     background: #151a2e;
-    border-radius: 14px;
-    padding: 20px;
+    border-radius: 16px;
+    padding: clamp(16px, 4vw, 28px);
     border: 1px solid #262c45;
     box-shadow: 0 20px 45px rgba(0, 0, 0, .45);
 }
 
-/* ===== Title ===== */
+/* ===== TITLE ===== */
 h2 {
-    margin-bottom: 12px;
-    font-size: 22px;
+    margin-bottom: 14px;
+    font-size: clamp(20px, 2.5vw, 26px);
     font-weight: 700;
+    text-align: center;
 }
 
-/* ===== Map ===== */
+/* ===== MAP IMAGE ===== */
 .floor-map {
     width: 100%;
-    border-radius: 12px;
+    height: auto;
+    border-radius: 14px;
     border: 2px solid #2a335a;
-    margin: 16px 0;
+    margin: 18px 0;
+    object-fit: contain;
 }
 
-/* ===== Inputs ===== */
+/* ===== FORM ELEMENTS ===== */
 select,
 button {
-    padding: 9px 12px;
+    width: 100%;
+    padding: 12px 14px;
     margin: 8px 0;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #2d365d;
     background: #0f1326;
     color: #e9ebff;
-    font-size: 14px;
+    font-size: 15px;
     outline: none;
-    transition: .25s;
+    transition: all .25s ease;
 }
 
+/* Touch-friendly select */
+select {
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Focus state */
 select:focus {
     border-color: #7c88ff;
-    box-shadow: 0 0 0 2px rgba(124, 136, 255, .25);
+    box-shadow: 0 0 0 3px rgba(124, 136, 255, .25);
 }
 
-/* ===== Buttons ===== */
+/* ===== BUTTONS ===== */
 .buttons {
-    margin-top: 12px;
+    margin-top: 14px;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 12px;
 }
 
 button {
@@ -66,35 +90,38 @@ button {
     border: none;
     cursor: pointer;
     font-weight: 600;
+    letter-spacing: .3px;
 }
 
 button:hover {
-    filter: brightness(1.2);
+    filter: brightness(1.15);
     transform: translateY(-1px);
 }
 
 button:active {
-    transform: scale(.96);
+    transform: scale(.97);
 }
 
-/* ===== Output ===== */
+/* ===== OUTPUT SECTION ===== */
 #output {
-    margin-top: 18px;
+    margin-top: 20px;
 }
 
-/* Each path step */
+/* Path step cards */
 .step {
     background: #10172d;
-    padding: 10px 12px;
-    border-radius: 10px;
-    margin: 6px 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin: 8px 0;
     border: 1px solid #1f2750;
+    font-size: 14px;
 }
 
-/* Note text */
+/* Notes */
 .note {
     color: #9aa3d1;
     font-size: 13px;
+    margin-top: 4px;
 }
 
 /* Summary box */
@@ -102,12 +129,39 @@ button:active {
     background: #0e2b24;
     border: 1px solid #2ad6a1;
     color: #9afbd8;
-    padding: 10px 12px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
 }
 
-/* ===== Light Mode Support (optional) ===== */
+/* ===== DESKTOP / TABLET BREAKPOINT ===== */
+@media (min-width: 768px) {
+
+    .buttons {
+        flex-direction: row;
+    }
+
+    select,
+    button {
+        width: auto;
+        flex: 1;
+    }
+
+    h2 {
+        text-align: left;
+    }
+}
+
+/* ===== LARGE SCREEN OPTIMIZATION ===== */
+@media (min-width: 1024px) {
+
+    .container {
+        max-width: 1000px;
+    }
+}
+
+/* ===== LIGHT MODE SUPPORT ===== */
 .light {
     background: #f3f5fb;
     color: #1f2937;
@@ -122,7 +176,20 @@ button:active {
     border-color: #dbe3ff;
 }
 
+.light select,
+.light button {
+    background: #f9fafb;
+    color: #111827;
+    border: 1px solid #c7d2fe;
+}
+
 .light .step {
     background: #f7f8ff;
     border: 1px solid #e4e8ff;
+}
+
+.light .summary {
+    background: #ecfdf5;
+    border-color: #34d399;
+    color: #065f46;
 }
