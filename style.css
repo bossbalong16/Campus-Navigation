@@ -42,7 +42,7 @@ h2 {
 
 /* ===== MAP IMAGE ===== */
 .floor-map {
-    width: 100%;
+    width: 75%;
     height: auto;
     border-radius: 14px;
     border: 2px solid #2a335a;
@@ -193,3 +193,4 @@ button:active {
     border-color: #34d399;
     color: #065f46;
 }
+
