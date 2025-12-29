@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Navigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Case: 8 Campus Navigation</h2>
+    
+    <!-- Floor Image Always Shown -->
+    <div id="floorMap">
+        <img src="dijkstra.png" class="floor-map" />
+    </div>
+
+    <label>Start:</label>
+    <select id="start"></select>
+    <br>
+    <label>Floor Destination:</label>
+    <select id="floorSelect" onchange="showFloorMap()">
+        <option disabled selected>Select Floor</option>
+        <option value="out">Outside Of Campus</option>
+        <option value="1st">1st Floor</option>
+        <option value="2nd">2nd Floor</option>
+        <option value="3rd">3rd Floor</option>
+    </select>
+    <br>
+
+    <label>Destination:</label>
+    <select id="end" disabled></select>
+
+    <div class="buttons">
+        <button onclick="findShortestPath()">Find Shortest Path</button>
+        <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
