@@ -1,88 +1,90 @@
-/* ===== CSS RESET & GLOBAL ===== */
-*,
-*::before,
-*::after {
+/* ===== Global ===== */
+* {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 16px;
 }
 
 body {
     font-family: "Inter", Arial, sans-serif;
-    min-height: 100vh;
-    padding: clamp(16px, 4vw, 32px);
+    padding: 24px;
     background: #0f1220;
     color: #e5e7f5;
-    transition: background .25s ease, color .25s ease;
-    line-height: 1.6;
+    transition: background .25s, color .25s;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/* ===== Container Card ===== */
 .container {
-    max-width: 900px;
-    margin: 0 auto;
     background: #151a2e;
-    border-radius: 16px;
-    padding: clamp(16px, 4vw, 28px);
+    border-radius: 14px;
+    padding: 20px;
     border: 1px solid #262c45;
     box-shadow: 0 20px 45px rgba(0, 0, 0, .45);
 }
 
-/* ===== TITLE ===== */
+/* ===== Title ===== */
 h2 {
-    margin-bottom: 14px;
-    font-size: clamp(20px, 2.5vw, 26px);
+    margin-bottom: 12px;
+    font-size: 22px;
     font-weight: 700;
-    text-align: center;
 }
 
-/* ===== MAP IMAGE ===== */
+/* ===== Map (RESPONSIVE) ===== */
 .floor-map {
     width: 100%;
-    height: auto;
-    border-radius: 14px;
+    max-width: 500px;     /* limit sa desktop */
+    border-radius: 12px;
     border: 2px solid #2a335a;
-    margin: 18px 0;
-    object-fit: contain;
+    margin: 16px auto;    /* center image */
+    display: block;
 }
 
-/* ===== FORM ELEMENTS ===== */
+/* Desktop (malaki screen) */
+@media (min-width: 1024px) {
+    .floor-map {
+        max-width: 450px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1023px) {
+    .floor-map {
+        max-width: 600px;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .floor-map {
+        width: 95%;
+        max-width: none;
+    }
+}
+
+/* ===== Inputs ===== */
 select,
 button {
-    width: 100%;
-    padding: 12px 14px;
+    padding: 9px 12px;
     margin: 8px 0;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid #2d365d;
     background: #0f1326;
     color: #e9ebff;
-    font-size: 15px;
+    font-size: 14px;
     outline: none;
-    transition: all .25s ease;
+    transition: .25s;
+    
 }
 
-/* Touch-friendly select */
-select {
-    appearance: none;
-    cursor: pointer;
-}
-
-/* Focus state */
 select:focus {
     border-color: #7c88ff;
-    box-shadow: 0 0 0 3px rgba(124, 136, 255, .25);
+    box-shadow: 0 0 0 2px rgba(124, 136, 255, .25);
 }
 
-/* ===== BUTTONS ===== */
+/* ===== Buttons ===== */
 .buttons {
-    margin-top: 14px;
+    margin-top: 12px;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    justify-content: center;
 }
 
 button {
@@ -90,111 +92,46 @@ button {
     border: none;
     cursor: pointer;
     font-weight: 600;
-    letter-spacing: .3px;
+    
 }
 
 button:hover {
-    filter: brightness(1.15);
+    filter: brightness(1.2);
     transform: translateY(-1px);
 }
 
 button:active {
-    transform: scale(.97);
+    transform: scale(.96);
 }
 
-/* ===== OUTPUT SECTION ===== */
+/* ===== Output ===== */
 #output {
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
-/* Path step cards */
 .step {
     background: #10172d;
-    padding: 12px 14px;
-    border-radius: 12px;
-    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin: 6px 0;
     border: 1px solid #1f2750;
-    font-size: 14px;
 }
 
-/* Notes */
 .note {
     color: #9aa3d1;
     font-size: 13px;
-    margin-top: 4px;
 }
 
-/* Summary box */
 .summary {
     background: #0e2b24;
     border: 1px solid #2ad6a1;
     color: #9afbd8;
-    padding: 12px 14px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-/* ===== DESKTOP / TABLET BREAKPOINT ===== */
-@media (min-width: 768px) {
-
-    .buttons {
-        flex-direction: row;
-    }
-
-    select,
-    button {
-        width: auto;
-        flex: 1;
-    }
-
-    h2 {
-        text-align: left;
-    }
-}
-
-/* ===== LARGE SCREEN OPTIMIZATION ===== */
-@media (min-width: 1024px) {
-
-    .container {
-        max-width: 1000px;
-    }
-}
-
-/* ===== LIGHT MODE SUPPORT ===== */
-.light {
-    background: #f3f5fb;
-    color: #1f2937;
-}
-
-.light .container {
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-}
-
-.light .floor-map {
-    border-color: #dbe3ff;
-}
-
-.light select,
-.light button {
-    background: #f9fafb;
-    color: #111827;
-    border: 1px solid #c7d2fe;
-}
-
-.light .step {
-    background: #f7f8ff;
-    border: 1px solid #e4e8ff;
-}
-
-.light .summary {
-    background: #ecfdf5;
-    border-color: #34d399;
-    color: #065f46;
-}
-
-/* ===== FOOTER ===== */
+/* ===== Footer ===== */
 .footer {
     margin-top: 40px;
     padding-top: 16px;
@@ -207,12 +144,3 @@ button:active {
 .footer p {
     margin: 4px 0;
 }
-
-/* Light mode support */
-.light .footer {
-    border-top: 1px solid #d1d5db;
-    color: #6b7280;
-}
-
-
-
