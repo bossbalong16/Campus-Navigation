@@ -10,42 +10,43 @@
 
 <body>
     <h2>Case: 8 Campus Navigation</h2>
-    
+
     <!-- Floor Image Always Shown -->
     <div id="floorMap">
         <img src="dijkstra.png" class="floor-map" />
     </div>
 
     <label>Close Route Announcement (optional)</label>
-    <select id="">
+    <select id="CloseRoute">
         <option value="">Select Route</option>
-        <option value="">GATE ENTRANCE</option>  
-        <option value="">COURT</option>     
-        <option value="">PARKING</option>  
-        <option value="">GUARD</option>     
-        <option value="">CANTEEN</option>    
-        <option value="">VEHICLE EXIT WAY</option>    
-        <option value="">STUDENT EXIT WAY</option>    
-        <option value="">GATE EXIT</option>    
-        <option value="">CAMPUS ENTRANCE</option>
-        <option value="">OFFICE 1</option>   
-        <option value="">OFFICE 2</option>    
-        <option value="">OFFICE 3</option>    
-        <option value="">OFFICE 4</option>    
-        <option value="">OFFICE 5</option>      
-        <option value="">2nd STAIR LEFT</option>
-        <option value="">2nd STAIR RIGHT</option> 
-        <option value="">RM:201</option> 
-        <option value="">RM:202</option> 
-        <option value="">RM:203</option> 
-        <option value="">RM:204</option> 
-        <option value="">RM:205</option>        
-        <option value="">3rd STAIR LEFT</option>
-        <option value="">3rd STAIR RIGHT</option> 
-        <option value="">RM:301</option>
-        <option value="">RM:302</option>
-        <option value="">RM:303</option>
-        <option value="">RM:304</option> 
+        <option value="GATE ENTRANCE">GATE ENTRANCE</option>
+        <option value="COURT">COURT</option>
+        <option value="PARKING">PARKING</option>
+        <option value="GUARD">GUARD</option>
+        <option value="CANTEEN">CANTEEN</option>
+        <option value="VEHICLE EXIT WAY">VEHICLE EXIT WAY</option>
+        <option value="STUDENT EXIT WAY">STUDENT EXIT WAY</option>
+        <option value="GATE EXIT">GATE EXIT</option>
+        <option value="CAMPUS ENTRANCE">CAMPUS ENTRANCE</option>
+        <option value="OFFICE 1">OFFICE 1</option>
+        <option value="OFFICE 2">OFFICE 2</option>
+        <option value="OFFICE 3">OFFICE 3</option>
+        <option value="OFFICE 4">OFFICE 4</option>
+        <option value="OFFICE 5">OFFICE 5</option>
+        <option value="2nd STAIR LEFT">2nd STAIR LEFT</option>
+        <option value="2nd STAIR RIGHT">2nd STAIR RIGHT</option>
+        <option value="RM:201">RM:201</option>
+        <option value="RM:202">RM:202</option>
+        <option value="RM:203">RM:203</option>
+        <option value="RM:204">RM:204</option>
+        <option value="RM:205">RM:205</option>
+        <option value="3rd STAIR LEFT">3rd STAIR LEFT</option>
+        <option value="3rd STAIR RIGHT">3rd STAIR RIGHT</option>
+        <option value="RM:301">RM:301</option>
+        <option value="RM:302">RM:302</option>
+        <option value="RM:303">RM:303</option>
+        <option value="RM:304">RM:304</option>
+        <option value="RM:305">RM:305</option>
     </select>
     <br>
 
@@ -53,7 +54,7 @@
     <select id="start"></select>
     <br>
     <label>📌 Floor Destination:</label>
-    <select id="floorSelect" onchange="showFloorMap()" >
+    <select id="floorSelect" onchange="showFloorMap()">
         <option disabled selected>Select Floor</option>
         <option value="out">Outside Of Campus</option>
         <option value="1st">1st Floor</option>
